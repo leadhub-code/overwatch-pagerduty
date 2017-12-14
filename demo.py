@@ -20,6 +20,7 @@ def main():
     args = p.parse_args()
     logging.basicConfig(level=logging.DEBUG)
     token = os.environ['PD_TOKEN'] # pagerduty integration key
+    # https://v2.developer.pagerduty.com/docs/events-api-v2
     data = {
         'routing_key': token,
         'dedup_key': args.dedup_key or uuid4().hex,
